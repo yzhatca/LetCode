@@ -24,20 +24,21 @@
 
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
-#题目中需要查找两个数的和是否为target，所以将两个数的值作为哈希表中的key更为方便，因为可以直接查找
-# def twoSum(nums, target):
-#     nums_hashTable = {}
-#     for index, value in enumerate(nums):
-#         num1_value = target - value
-#         if num1_value in nums_hashTable:
-#             return [nums_hashTable[num1_value],index]
-#         nums_hashTable[value] = index
+# since we have to find the indexes of two numbers in the array which the sum of them is equal to target，
+# It's better to use the index of the elements in array as key in hash tables
+def twoSum(nums, target):
+    nums_hashTable = {}
+    for index, value in enumerate(nums):
+        num1_value = target - value
+        if num1_value in nums_hashTable:
+            return [nums_hashTable[num1_value],index]
+        nums_hashTable[value] = index
     
-#     return []
+    return []
 
-# nums1 = [2, 7, 11, 15]
-# target1 = 9
-# print(twoSum(nums1, target1)) 
+nums1 = [2, 7, 11, 15]
+target1 = 9
+print(twoSum(nums1, target1)) 
 
 
 #这个方法要考虑到原始数组的索引，排序后索引会发生改变
@@ -60,12 +61,12 @@
 #             right -= 1
 
 #传统方法,注意遍历的范围，外层从左开始，内层从右开始
-def twoSum(nums, target):
-    for i in range(0,len(nums)):
-        for j in range(len(nums) - 1, i, -1):
-            if nums[i] + nums[j] == target:
-                return [i,j] 
-        return []
+# def twoSum(nums, target):
+#     for i in range(0,len(nums)):
+#         for j in range(len(nums) - 1, i, -1):
+#             if nums[i] + nums[j] == target:
+#                 return [i,j] 
+#         return []
 
 nums1 = [2, 7, 11, 15]
 target1 = 9
