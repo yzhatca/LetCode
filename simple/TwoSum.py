@@ -25,7 +25,7 @@
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
 # since we have to find the indexes of two numbers in the array which the sum of them is equal to target，
-# It's better to use the index of the elements in array as key in hash tables
+# It's better to use the value of the elements in array as key in hash tables
 def twoSum(nums, target):
     nums_hashTable = {}
     for index, value in enumerate(nums):
@@ -33,7 +33,6 @@ def twoSum(nums, target):
         if num1_value in nums_hashTable:
             return [nums_hashTable[num1_value],index]
         nums_hashTable[value] = index
-    
     return []
 
 nums1 = [2, 7, 11, 15]
